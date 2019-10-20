@@ -1,0 +1,20 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+test:
+  script:
+    - npm install
+    - CI=true npm run test -- --coverage
+
+pages:
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - build
+  only:
+    - master
