@@ -11,9 +11,10 @@ test('previewer renders and display the rich text content', () => {
     <Previewer data-testid='previewer' content={content} />
   )
   const element = getByTestId('previewer')
+  const previewer = container.querySelector('div')
 
+  expect(previewer.id).toBe('preview')
   expect(element).toBeInTheDocument()
   expect(element).toHaveAttribute('id')
-  expect(container.firstChild.id).toBe('preview')
   expect(element).toContainHTML('<h1>Hello world! from Markdown</h1>')
 })

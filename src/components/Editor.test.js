@@ -14,11 +14,12 @@ test('editor renders and handle user input', () => {
     <Editor placeholder={placeholder} onChange={handleChange} />
   )
   const element = getByLabelText('Editor')
+  const editor = container.querySelector('textarea')
 
+  expect(editor.id).toBe('editor')
   expect(element).toBeInTheDocument()
   expect(element).toHaveAttribute('id')
   expect(element).toHaveValue(placeholder)
-  expect(container.lastElementChild.id).toBe('editor')
 
   fireEvent.change(element, { target: { value: 'Hello world!' } })
   expect(handleChange).toHaveBeenCalledTimes(1)
