@@ -13,7 +13,10 @@ function Previewer({ content }) {
   }
 
   return (
-    <div id='preview' dangerouslySetInnerHTML={createMarkup()}></div>
+    <>
+      <label htmlFor="preview">Preview</label>
+      <div id='preview' dangerouslySetInnerHTML={createMarkup()}></div>
+    </>
   )
 }
 
