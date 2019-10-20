@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import MarkdownIt from 'markdown-it'
 
-function Previewer({ content, ...props }) {
+function Previewer({ content }) {
   function createMarkup() {
     const md = new MarkdownIt({
       breaks: true
@@ -13,7 +13,7 @@ function Previewer({ content, ...props }) {
   }
 
   return (
-    <div id='preview' dangerouslySetInnerHTML={createMarkup()} {...props}></div>
+    <div id='preview' dangerouslySetInnerHTML={createMarkup()}></div>
   )
 }
 
