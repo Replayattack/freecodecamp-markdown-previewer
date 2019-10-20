@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+label {
+  color: #FFFFFF;
+  background-color: #333333;
+  padding: 20px;
+  font-weight: 500;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#editor {
+  grid-area: 2 / 1;
+}
